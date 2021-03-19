@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCalcEtecTerceiro.MainPage"
+             BackgroundColor="#333">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="Button" x:Key="botaoComum">
+                <Setter Property="FontSize" Value="Title" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="TextColor" Value="#333" />
+            </Style>
+            
+            <Style TargetType="Button" x:Key="botaoClaro" BasedOn="{StaticResource botaoComum}">
+                <Setter Property="BackgroundColor" Value="#ccc" />                
+            </Style>
+            <Style TargetType="Button" x:Key="botaoEscuro" BasedOn="{StaticResource botaoComum}">
+                <Setter Property="BackgroundColor" Value="#999" />
+            </Style>
+            <Style TargetType="Button" x:Key="botaoLaranja" BasedOn="{StaticResource botaoComum}">
+                <Setter Property="BackgroundColor" Value="Orange" />
+            </Style>
+        </ResourceDictionary>        
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid ColumnSpacing="3" RowSpacing="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                   Text="0"
+                   HorizontalTextAlignment="End"
+                   VerticalTextAlignment="End"
+                   FontSize="60"
+                   TextColor="White" />
+
+            <Button Grid.Row="1" Grid.Column="0" Text="C" Style="{StaticResource botaoEscuro}" />
+            <Button Grid.Row="1" Grid.Column="1" Text="+/-" Style="{StaticResource botaoEscuro}" />
+            <Button Grid.Row="1" Grid.Column="2" Text="%" Style="{StaticResource botaoEscuro}" />
+            <Button Grid.Row="1" Grid.Column="3" Text="Div" Style="{StaticResource botaoLaranja}" />
+
+            <Button Grid.Row="2" Grid.Column="0" Text="7" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="2" Grid.Column="1" Text="8" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="2" Grid.Column="2" Text="9" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="2" Grid.Column="3" Text="X" Style="{StaticResource botaoLaranja}" />
+
+            <Button Grid.Row="3" Grid.Column="0" Text="4" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="3" Grid.Column="1" Text="5" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="3" Grid.Column="2" Text="6" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="3" Grid.Column="3" Text="-" Style="{StaticResource botaoLaranja}" />
+
+            <Button Grid.Row="4" Grid.Column="0" Text="1" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="4" Grid.Column="1" Text="2" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="4" Grid.Column="2" Text="3" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="4" Grid.Column="3" Text="+" Style="{StaticResource botaoLaranja}" />
+
+            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="0" Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="5" Grid.Column="2" Text="." Style="{StaticResource botaoClaro}" />
+            <Button Grid.Row="5" Grid.Column="3" Text="=" Style="{StaticResource botaoLaranja}" />
+
+            <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4"
+                   Text="Aprendendo a Desenvolver Apps com Xamarin Forms na Etec"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Title"
+                   TextColor="White"
+                   FontAttributes="Italic">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String"
+                                Android="DancingScript-VariableFont_wght.ttf#DancingScript-VariableFont_wght" />
+                </Label.FontFamily>
+            </Label>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
